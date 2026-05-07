@@ -1,0 +1,315 @@
+/* Yousif Taha
+   CalcStyle
+   4/29/2026 */
+
+/* GPA Calculator page */
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary:#f1f1edfe;
+    --secondary:#2C3947;
+    --text:#547A95;
+    --accent:#C2A56D;
+}
+
+body {
+    font-family: Verdana;
+    margin-top: 50px;
+    background-color:var(--primary);
+    color:var(--secondary);
+    margin: 0;
+}
+
+.panel-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    font-family:Verdana;
+    font-size:2.5rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-right: 50px;
+    margin-top: 0px;
+}
+
+.calc-desc {
+    text-align: center;
+}
+
+.calc-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction:column;
+    width:450px;
+    margin: 0 auto;
+    background-color:var(--text);
+    border: 1px solid var(--accent);
+    color:#000;
+    padding:30px;
+}
+
+#course-container {
+    margin: 0 auto;
+}
+
+.row {
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin:7px;
+}
+
+input {
+    color:var(--secondary);
+    width:110px;
+    padding: 6px;
+    border: .5px solid #000;
+    background-color: var(--primary);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #000;
+    transition: box-shadow 0.2s ease;
+}
+
+input::placeholder {
+    color: #000;
+}
+
+.credits:hover {
+    box-shadow: 0px 0px 11px #000;
+}
+
+.credits:focus {
+    outline: none;
+}
+.add-btn {
+    align-self:flex-start;
+    font-family:Verdana;
+    margin-top:5px;
+    background-color:var(--primary);
+    border: .5px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #000;
+    transition: box-shadow 0.2s ease;
+}
+
+.add-btn:hover {
+    box-shadow: 0px 0px 11px #000;
+}
+
+.calc-btn {
+    align-self: flex-end;
+    font-family: Verdana;
+    margin-top:5px;
+    background-color: var(--primary);
+    border: .5px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #000;
+    transition: box-shadow 0.2s ease;
+}
+
+.calc-btn:hover {
+    box-shadow: 0px 0px 11px #000;
+}
+
+select {
+    padding: 6px;
+    width: 100px;
+    border-radius:5px;
+    border: .5px solid #000;
+    appearance: none;
+    background-image: url("arrow-down-sign-to-navigate.png");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 11px;
+    background-color: var(--primary);
+    box-shadow: 0px 0px 5px #000;
+    transition: box-shadow 0.2s ease;
+}
+
+select:hover {
+    box-shadow: 0px 0px 11px #000;
+}
+
+select:focus {
+    outline: none;
+}
+
+
+
+#result {
+    font-family: Verdana;
+    margin:10px;
+    
+}
+
+nav {
+    display: flex;
+    gap: 12px;
+    padding: 0px 20px;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    background-color: var(--text);
+    align-items: center;
+    border: 1px solid var(--accent);
+}
+
+a {
+    color: var(--secondary);
+}
+
+h1 {
+    margin-right: auto;
+}
+
+.menu-calc, .menu-ai, .menu-about {
+    transition: text-shadow 0.2s ease;
+}
+
+.menu-calc:hover, .menu-about:hover, .menu-ai:hover {
+    text-shadow: 0px 0px 7px #000
+}
+
+.menu-calc:focus, .menu-about:focus, .menu-ai:focus {
+    color:purple;
+}
+
+.side {
+    margin-top: 10px;
+    width: 350px;
+}
+
+#ai {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 100px 650px;
+    width: 640px;
+    padding: 20px;
+    gap: 10px;
+}
+
+#ai-btn-input {
+    position: relative;
+}
+
+#ai-input {
+    font-family: Verdana;
+    width: 600px;
+    height: 20px;
+    font-size: 1em;
+    box-shadow: 0px 2px 3px #000;
+    padding: 10px 50px 10px 10px;
+    background-color: var(--primary);
+    border-radius: 6px;
+    resize:none;
+}
+
+#ai-input::placeholder {
+    font-family: Verdana;
+}
+
+#ai-input:focus {
+   outline: none; 
+}
+
+#ai-label {
+    align-self: flex-start;
+}
+
+#ai-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url("up-arrow.png");
+    background-repeat: no-repeat;
+    background-position: right 6.7px center;
+    background-size: 13px;
+    background-color: var(--primary);
+}
+
+.ai-btn-container {
+    position: absolute;
+    right: 15px;
+    bottom: 15%;
+}
+
+.tooltip {
+    position: absolute;
+    top: 120%;
+    right: -35px;
+    background-color: var(--text);
+    padding: 5px;
+    border-radius: 10px;
+    font-size: .75em;
+    white-space: nowrap;
+    color: #000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s ease;
+}
+
+.ai-btn-container:hover .tooltip {
+    opacity: 1;
+}
+
+#ai-output {
+    background-color: var(--text);
+    border: 1.5px solid var(--accent);
+    margin-top: 30px;
+    width: 600px;
+    padding: 20px;
+    color:#000;
+    min-height: 100px;
+}
+
+/* About Page */
+.about {
+    display: flex;
+    font-family: Verdana;
+    color: var(--secondary);
+    background-color: var(--primary);
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.about-header {
+    text-align: left;
+    margin: 20px 60px 0px;
+    font-size: 2.75em;
+}
+
+.about-desc {
+    display: flex;
+    flex-direction: column;
+    color: var(--secondary);
+    font-size: 1em;
+    text-align: left;
+    margin: 10px 60px 30px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+    text-decoration: underline;
+}
+
+.creator {
+    text-align: center;
+    margin-top: auto;
+}
+

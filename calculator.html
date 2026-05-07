@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GPA Calculator</title>
+  <link rel="stylesheet" href="CalcStyle.css">
+</head>
+
+<body>
+
+  <nav>
+    <h1>GPA-Calc</h1>
+    <a class="menu-calc" href="#">GPA Calculator</a>
+    <label>|</label>
+    <a class="menu-ai" href="calculator.html#ai">AI</a>
+    <label>|</label>
+    <a class="menu-about" href="about.html">About</a>
+  </nav>
+
+  <div class="panel-container">
+
+    <div class="main">
+      <h2>GPA Calculator</h2>
+      <p class="calc-desc">Calculate your cumulative GPA</p>
+
+      <div class="calc-box">
+
+        <div id="course-container"></div>
+
+        <div class="button-row">
+          <button class="add-btn">Add Class +</button>
+          <button class="calc-btn">Calculate GPA</button>
+        </div>
+
+        <output id="result"></output>
+
+      </div>
+    </div>
+
+    <div class="side">
+      <h3>How to use</h3>
+      <p>Simply select from the "Grade" dropdown box what grade you have for the class in mind. Then type the credit hours that apply to that same course.
+         After you have provided the necessary data click on the "Calculate GPA" button to instantly see your GPA. Final note, If you have more classes you
+         need to add just press the "Add Class +" button.</p>
+
+      <h3>Letter Grade Scale</h3>
+      <p>&bull; A = 4.0</p>
+      <p>&bull; B = 3.0</p>
+      <p>&bull; C = 2.0</p>
+      <p>&bull; D = 1.0</p>
+      <p>&bull; F = 0</p>
+    </div>
+
+  </div>
+
+  <div id="ai">
+    <div id="ai-btn-input">
+      <label id="ai-label">AI Input</label>
+      <textarea id="ai-input" placeholder="Ask something..."></textarea>
+
+      <div class="ai-btn-container">
+        <button id="ai-btn" aria-label="Send message"></button>
+        <span class="tooltip">Send message</span>
+      </div>
+    </div>
+
+    <div id="ai-output"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="calcLogic.js"></script>
+</body>
+
+</html>
+
